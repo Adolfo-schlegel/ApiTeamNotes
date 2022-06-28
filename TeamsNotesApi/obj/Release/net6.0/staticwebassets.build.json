@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "5wC+tzmEfgZ8rBJJJ/OHocOFrFPQ8BEoOGuApm7k5qA=",
+  "Source": "TeamsNotesApi",
+  "BasePath": "_content/TeamsNotesApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
