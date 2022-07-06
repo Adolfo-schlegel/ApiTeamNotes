@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Expo.Server.Models
+namespace TeamsNotesApi.Models.Notification.Expo
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class PushResceiptResponse
     {
         [JsonProperty(PropertyName = "data")]
-        public Dictionary<string,PushTicketDeliveryStatus> PushTicketReceipts { get; set; }
+        public Dictionary<string, PushTicketDeliveryStatus> PushTicketReceipts { get; set; }
 
         [JsonProperty(PropertyName = "errors")]
         public List<PushReceiptErrorInformation> ErrorInformations { get; set; }

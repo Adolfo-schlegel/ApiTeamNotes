@@ -1,11 +1,11 @@
-﻿using Expo.Server.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Net.Http.Headers;
+using TeamsNotesApi.Models.Notification.Expo;
 using TeamsNotesApi.Services.Interfaces;
 
 namespace TeamsNotesApi.Services.Notifications
 {
-    public class NotificationService: INotificationService
+    public class NotificationExpoService: INotificationExpoService
     {
         //Environemt Configuration
         private const string _expoBackendHost = "https://exp.host";
@@ -17,16 +17,18 @@ namespace TeamsNotesApi.Services.Notifications
         private static readonly HttpClient _httpClient = new HttpClient(_httpHandler);
 
         public string AccessToken{ set {_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", value); }}
-
-        static NotificationService()
+        
+        static NotificationExpoService()
         {
             _httpClient.BaseAddress = new Uri(_expoBackendHost);
             _httpClient.DefaultRequestHeaders.Accept.Clear();
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "AAAABdFjYq4:APA91bFFXJbdDwaq6f0OPGKa4vBmaHWMPFnxik4Higx4tVi8GVRWWWkUQOmYx2N_pqh3m9W8fYuqGLVbIhzlEkyyHg8fghUZGdvGj6Vp4Ba8vLCDVdwxxeBilU_LvwkYYbI8Ub9ONAsb");
         }
 
         public async Task<PushTicketResponse> PushSendAsync(PushTicketRequest pushTicketRequest)
         {
+            //AccessToken = "AAAABdFjYq4:APA91bFFXJbdDwaq6f0OPGKa4vBmaHWMPFnxik4Higx4tVi8GVRWWWkUQOmYx2N_pqh3m9W8fYuqGLVbIhzlEkyyHg8fghUZGdvGj6Vp4Ba8vLCDVdwxxeBilU_LvwkYYbI8Ub9ONAsb";
             var ticketResponse = await PostAsync<PushTicketRequest, PushTicketResponse>(pushTicketRequest, _pushSendPath);
             return ticketResponse;
         }
@@ -57,5 +59,7 @@ namespace TeamsNotesApi.Services.Notifications
 
             return responseBody;
         }
+
+        
     }
 }

@@ -13,6 +13,7 @@ C:\Users\adolf\source\repos\TeamsNotesApi\TeamsNotesApi\obj\Release\net6.0\PubTm
 C:\Users\adolf\source\repos\TeamsNotesApi\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\adolf\source\repos\TeamsNotesApi\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
 C:\Users\adolf\source\repos\TeamsNotesApi\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\adolf\source\repos\TeamsNotesApi\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.dll
 C:\Users\adolf\source\repos\TeamsNotesApi\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\adolf\source\repos\TeamsNotesApi\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\adolf\source\repos\TeamsNotesApi\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

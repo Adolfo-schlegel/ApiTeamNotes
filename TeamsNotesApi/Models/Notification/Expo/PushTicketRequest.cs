@@ -3,22 +3,22 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Expo.Server.Models
+namespace TeamsNotesApi.Models.Notification.Expo
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class PushTicketRequest
     {
         [JsonProperty(PropertyName = "to")]
-        public List<string> PushTo { get; set; }
+        public List<string>? PushTo { get; set; }
 
         [JsonProperty(PropertyName = "data")]
-        public object PushData { get; set; }
+        public object? PushData { get; set; }
 
         [JsonProperty(PropertyName = "title")]
-        public string PushTitle { get; set; }
+        public string? PushTitle { get; set; }
 
         [JsonProperty(PropertyName = "body")]
-        public string PushBody { get; set; }
+        public string? PushBody { get; set; }
 
         [JsonProperty(PropertyName = "ttl")]
         public int? PushTTL { get; set; }
@@ -27,18 +27,18 @@ namespace Expo.Server.Models
         public int? PushExpiration { get; set; }
 
         [JsonProperty(PropertyName = "priority")]  //'default' | 'normal' | 'high'
-        public string PushPriority { get; set; }
+        public string? PushPriority { get; set; }
 
         [JsonProperty(PropertyName = "subtitle")]
-        public string PushSubTitle { get; set; }
+        public string? PushSubTitle { get; set; }
 
         [JsonProperty(PropertyName = "sound")] //'default' | null	
-        public string PushSound { get; set; }
+        public string? PushSound { get; set; }
 
         [JsonProperty(PropertyName = "badge")]
         public int? PushBadgeCount { get; set; }
 
         [JsonProperty(PropertyName = "channelId")]
-        public string PushChannelId { get; set; }
+        public string? PushChannelId { get; set; }
     }
 }

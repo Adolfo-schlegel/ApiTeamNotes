@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using TeamsNotesApi.Models;
+using TeamsNotesApi.Models.Notification;
 using TeamsNotesApi.Services.Interfaces;
 
 namespace TeamsNotesApi.Controllers
@@ -8,36 +11,37 @@ namespace TeamsNotesApi.Controllers
     public class NotificationController : Controller
     {
         Reply oR;
-        INotificationService _notificationService;
-        public NotificationController(INotificationService notificationService)
+        ISaveTokenUserService _userService;
+        public NotificationController(ISaveTokenUserService userService)
         {
             oR = new();
-            _notificationService = notificationService;
+            _userService = userService;
         }
 
-        [HttpGet]
+        
+        [HttpPost]
         [Route("SendNotification")]
-        public async Task<Reply> SendMessage([FromQuery] string message)
+        [Authorize]
+        public async Task<Reply> SaveToken([FromBody] PushTokenUser tokenUser)
         {
-            //var pushTicketReq = new Expo.Server.Models.PushTicketRequest()
-            //{
-            //    PushTo = new List<string>() { "ExponentPushToken[WUax4OF8mdlthYKxh5fY23]" },
-            //    PushBadgeCount = 7,
-            //    PushBody = message
-            //};
+            var a = HttpContext.Response.Headers;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
 
-            var pushTicketReq = new Expo.Server.Models.PushTicketRequest()
+            if (identity != null)
             {
-               PushTo = new List<string>() { "ExponentPushToken[WUax4OF8mdlthYKxh5fY23]" },
-               PushTitle = "Nuevas notas CVM",
-               PushBody = message + "🙄",
-               PushSound = "default"
-            };
+                int id_user = int.Parse(identity.Claims.First().Value);
 
+                oR.message = _userService.InsertTokenUsers(id_user, tokenUser.token);
 
+                if(oR.message == "OK")
+                {
+                    oR.result = 1;
+                }
 
-            oR.data = await _notificationService.PushSendAsync(pushTicketReq);
-            
+                return oR;
+            }
+
+            oR.message = "Error al insertar token del usuario";
             return oR;
         }
 

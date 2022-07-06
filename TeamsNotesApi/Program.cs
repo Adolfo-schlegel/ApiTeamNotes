@@ -9,21 +9,47 @@ using TeamsNotesApi.Services.Security;
 using TeamsNotesApi.Services.Notes;
 using TeamsNotesApi.Tools.EncryptPass;
 using TeamsNotesApi.Services.Notifications;
+using CorePush.Google;
+using CorePush.Apple;
+using TeamsNotesApi.Models.Notification.Firebase;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+//{{{{{{{{{{{{{ALL COMMON SERVICES}}}}}}}}}}}}}
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ILoginService, LoginService>();
-builder.Services.AddScoped<IJwtAuth, JwtAuth>();                                //DI Tokens
 builder.Services.AddScoped<IMyNotesService, MyNotesService>();
-builder.Services.AddScoped<IEncrypt, Encrypt>();
-builder.Services.AddScoped<INotificationService, NotificationService>();
 
-//-------------------------------JWT-------------------------------------------------------
+//<----------------Security------------------>
+builder.Services.AddScoped<IEncrypt, Encrypt>();
+builder.Services.AddScoped<IJwtAuth, JwtAuth>();
+//<같같같같같같같같같같같같같같같같같같같같같�>
+
+//<--------------Notification---------------->
+builder.Services.AddScoped<ISaveTokenUserService, SaveTokenUserService>();
+builder.Services.AddSingleton<IMessageNotifiedService, MessageNotifiedService>();
+builder.Services.AddSingleton<ICountStatusNoteService, CountStatusNoteService>();
+builder.Services.AddSingleton<INotificationExpoService, NotificationExpoService>();
+
+//builder.Services.AddHttpClient<FcmSender>();
+//builder.Services.AddHttpClient<ApnSender>();
+
+//var appSettingsSection = builder.Configuration.GetSection("FcmNotification");
+//builder.Services.Configure<FcmNotificationSetting>(appSettingsSection);
+
+//<같같같같같같같같같같같같같같같같같같같같같�>
+
+
+//<--------------Task in BackGround------------------>
+builder.Services.AddHostedService<BackGroundTaskService>();
+//<같같같같같같같같같같같같같같같같같같같같같같같>
+
+
+
+//|||||||||||||||||||||||||||||||JWT|||||||||||||||||||||||||||||||||||||||
 var appAppSettingsSection = builder.Configuration.GetSection("AppSettings");
 builder.Services.Configure<AppSettings>(appAppSettingsSection);
 
@@ -48,7 +74,11 @@ builder.Services.AddAuthentication(option => {
         };
     });
 
-//--------------------------JWT---------------------------------------------
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+
+
 
 
 var app = builder.Build();

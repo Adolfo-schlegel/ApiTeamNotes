@@ -1,8 +1,8 @@
-﻿using Expo.Server.Models;
+﻿using TeamsNotesApi.Models.Notification.Expo;
 
 namespace TeamsNotesApi.Services.Interfaces
 {
-    public interface INotificationService
+    public interface INotificationExpoService
     {
         public Task<PushTicketResponse> PushSendAsync(PushTicketRequest pushTicketRequest);
         public Task<PushResceiptResponse> PushGetReceiptsAsync(PushReceiptRequest pushReceiptRequest);
