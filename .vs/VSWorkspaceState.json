@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\TeamsNotesApi",
+    "\\TeamsNotesApi\\Controllers",
+    "\\TeamsNotesApi\\Services",
+    "\\TeamsNotesApi\\Services\\Interfaces",
+    "\\TeamsNotesApi\\Services\\Notifications",
+    "\\TeamsNotesApi\\Services\\Security"
+  ],
+  "SelectedNode": "\\TeamsNotesApi\\Controllers\\NotificationController.cs",
+  "PreviewInSolutionExplorer": false
+}

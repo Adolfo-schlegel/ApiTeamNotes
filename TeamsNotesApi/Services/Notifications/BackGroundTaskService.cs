@@ -12,21 +12,50 @@ namespace TeamsNotesApi.Services.Notifications
         private INotificationExpoService? _notificationExpoService;
         private IMessageNotifiedService _messageNotifiedService;        
         private ICountStatusNoteService _countStatusNoteService;
+        private ICountStatusNotesService2 _countStatusNotesService2;
         private System.Threading.Timer? _timer;
 
-        public BackGroundTaskService(ICountStatusNoteService countStatusNoteService, INotificationExpoService? notificationExpoService, IMessageNotifiedService messageNotifiedService)
+        public BackGroundTaskService(ICountStatusNoteService countStatusNoteService, INotificationExpoService? notificationExpoService, IMessageNotifiedService messageNotifiedService,ICountStatusNotesService2 countStatusNotesService2)
         {       
             _countStatusNoteService = countStatusNoteService;
+            _countStatusNotesService2 = countStatusNotesService2;
             _notificationExpoService = notificationExpoService;
             _messageNotifiedService = messageNotifiedService;
         }
         public Task StartAsync(CancellationToken cancellationToken)
-        {
+        {            
             //cuando empieza la tarea
             _timer = new Timer(TaskExpo, null, TimeSpan.Zero, TimeSpan.FromSeconds(5));
 
             return Task.CompletedTask;
         }
+
+        //public async void TaskExpo(object state)
+        //{
+        //    List<CountStatusNote> lst = new();
+
+        //    lst = _countStatusNoteService.SelectCountNotes();
+
+        //    foreach (var statusNote in lst)
+        //    {                
+        //        var result = await _notificationExpoService?.PushSendAsync(_messageNotifiedService.MessageToSend($"Tenes {statusNote.countNotesPending} notas pendientes", "CVM NOTAS", statusNote.token));
+
+        //        //log
+        //        Console.BackgroundColor = ConsoleColor.Red;
+        //        Console.WriteLine("\nuser (" + statusNote.id_user + ") - token (" + statusNote.token + ")" + " < Send message > ");
+
+        //        if (result?.PushTicketStatuses?.Count() > 0)
+        //        {
+        //            foreach (var error in result.PushTicketStatuses)
+        //            {
+        //                Console.ResetColor();
+        //                Console.ForegroundColor = ConsoleColor.DarkYellow;
+        //                Console.WriteLine($"\n--> response: {error.TicketId} - {error.TicketMessage} - {error.TicketStatus} - {error.TicketDetails} <--");
+        //                Console.ResetColor();                                            
+        //            }
+        //        }
+        //    }
+        //}
 
         public async void TaskExpo(object state)
         {
@@ -35,8 +64,10 @@ namespace TeamsNotesApi.Services.Notifications
             lst = _countStatusNoteService.SelectCountNotes();
 
             foreach (var statusNote in lst)
-            {                
-                var result = await _notificationExpoService?.PushSendAsync(_messageNotifiedService.MessageToSend($"Tenes {statusNote.countNotesPending} notas pendientes", "CVM NOTAS", statusNote.token));
+            {
+                var result = await _notificationExpoService?.PushSendAsync(_messageNotifiedService?.MessageToSend(_countStatusNotesService2?.SelectCountNotes(statusNote.id_user), "CVM NOTAS", statusNote?.token));
+
+                //log
                 Console.BackgroundColor = ConsoleColor.Red;
                 Console.WriteLine("\nuser (" + statusNote.id_user + ") - token (" + statusNote.token + ")" + " < Send message > ");
 
@@ -47,12 +78,11 @@ namespace TeamsNotesApi.Services.Notifications
                         Console.ResetColor();
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine($"\n--> response: {error.TicketId} - {error.TicketMessage} - {error.TicketStatus} - {error.TicketDetails} <--");
-                        Console.ResetColor();                                            
+                        Console.ResetColor();
                     }
                 }
             }
         }
-
         public async void TaskFirebase(object state)
         {
             //Console.WriteLine("\n Task Firebase eneble");

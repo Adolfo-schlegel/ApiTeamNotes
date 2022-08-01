@@ -11,8 +11,8 @@ namespace TeamsNotesApi.Controllers
     public class NotificationController : Controller
     {
         Reply oR;
-        ISaveTokenUserService _userService;
-        public NotificationController(ISaveTokenUserService userService)
+        IStatusUserNotificationService _userService;
+        public NotificationController(IStatusUserNotificationService userService)
         {
             oR = new();
             _userService = userService;
@@ -24,7 +24,6 @@ namespace TeamsNotesApi.Controllers
         [Authorize]
         public async Task<Reply> SaveToken([FromBody] PushTokenUser tokenUser)
         {
-            var a = HttpContext.Response.Headers;
             var identity = HttpContext.User.Identity as ClaimsIdentity;
 
             if (identity != null)
@@ -42,6 +41,28 @@ namespace TeamsNotesApi.Controllers
             }
 
             oR.message = "Error al insertar token del usuario";
+            return oR;
+        }
+
+        [HttpPut]
+        [Route("EnableNotification")]
+        [Authorize]
+        public Reply EnableNotification([FromQuery]int status)
+        {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+
+            if(identity != null)
+            {
+                int id_user = int.Parse(identity.Claims.First().Value);
+
+                oR.message = _userService.ChangeStatusUser(id_user,status);
+
+                if(oR.message == "OK")
+                {
+                    oR.result = 1;
+                    return oR;
+                }                                                   
+            }
             return oR;
         }
 

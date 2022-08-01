@@ -15,8 +15,9 @@ using TeamsNotesApi.Models.Notification.Firebase;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//{{{{{{{{{{{{{ALL COMMON SERVICES}}}}}}}}}}}}}
+//ALL COMMON SERVICES>>>>
 
+//<----------------tools--------------------->
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -29,31 +30,28 @@ builder.Services.AddScoped<IJwtAuth, JwtAuth>();
 //<같같같같같같같같같같같같같같같같같같같같같�>
 
 //<--------------Notification---------------->
-builder.Services.AddScoped<ISaveTokenUserService, SaveTokenUserService>();
+builder.Services.AddScoped<IStatusUserNotificationService, StatusUserNotificationService>();
 builder.Services.AddSingleton<IMessageNotifiedService, MessageNotifiedService>();
 builder.Services.AddSingleton<ICountStatusNoteService, CountStatusNoteService>();
 builder.Services.AddSingleton<INotificationExpoService, NotificationExpoService>();
+builder.Services.AddSingleton<ICountStatusNotesService2, CountStatusNotesService2>();
+//builder.Services.AddHostedService<BackGroundTaskService>();
 
-//builder.Services.AddHttpClient<FcmSender>();
-//builder.Services.AddHttpClient<ApnSender>();
-
-//var appSettingsSection = builder.Configuration.GetSection("FcmNotification");
-//builder.Services.Configure<FcmNotificationSetting>(appSettingsSection);
-
-//<같같같같같같같같같같같같같같같같같같같같같�>
-
-
-//<--------------Task in BackGround------------------>
-builder.Services.AddHostedService<BackGroundTaskService>();
-//<같같같같같같같같같같같같같같같같같같같같같같같>
+/*
+    builder.Services.AddHttpClient<FcmSender>();
+    builder.Services.AddHttpClient<ApnSender>();
+    var appSettingsSection = builder.Configuration.GetSection("FcmNotification");
+    builder.Services.Configure<FcmNotificationSetting>(appSettingsSection);
+*/
 
 
+//<<<<<ALL COMMON SERVICES
 
-//|||||||||||||||||||||||||||||||JWT|||||||||||||||||||||||||||||||||||||||
+//JWT>>>>>
 var appAppSettingsSection = builder.Configuration.GetSection("AppSettings");
 builder.Services.Configure<AppSettings>(appAppSettingsSection);
 
-//settings jwt
+//<---------settings------------->
 var appSettings = appAppSettingsSection.Get<AppSettings>();
 var llave = Encoding.ASCII.GetBytes(appSettings.Secreto);
 
@@ -74,11 +72,7 @@ builder.Services.AddAuthentication(option => {
         };
     });
 
-//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-
-
-
-
+//<<<<<JWT
 
 
 var app = builder.Build();

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\adolf\\source\\repos\\TeamsNotesApi\\TeamsNotesApi\\TeamsNotesApi.csproj": {}
+    "C:\\Users\\adolf\\source\\repos\\Api-TeamsNotes\\TeamsNotesApi\\TeamsNotesApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\adolf\\source\\repos\\TeamsNotesApi\\TeamsNotesApi\\TeamsNotesApi.csproj": {
+    "C:\\Users\\adolf\\source\\repos\\Api-TeamsNotes\\TeamsNotesApi\\TeamsNotesApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adolf\\source\\repos\\TeamsNotesApi\\TeamsNotesApi\\TeamsNotesApi.csproj",
+        "projectUniqueName": "C:\\Users\\adolf\\source\\repos\\Api-TeamsNotes\\TeamsNotesApi\\TeamsNotesApi.csproj",
         "projectName": "TeamsNotesApi",
-        "projectPath": "C:\\Users\\adolf\\source\\repos\\TeamsNotesApi\\TeamsNotesApi\\TeamsNotesApi.csproj",
+        "projectPath": "C:\\Users\\adolf\\source\\repos\\Api-TeamsNotes\\TeamsNotesApi\\TeamsNotesApi.csproj",
         "packagesPath": "C:\\Users\\adolf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adolf\\source\\repos\\TeamsNotesApi\\TeamsNotesApi\\obj\\",
+        "outputPath": "C:\\Users\\adolf\\source\\repos\\Api-TeamsNotes\\TeamsNotesApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -87,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

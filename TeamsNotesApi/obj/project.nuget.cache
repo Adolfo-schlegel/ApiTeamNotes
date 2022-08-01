@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JUF0+KtHe3MelzOQ2ohen+3i39sTHVs4n1fwOKty8oL/i6PqQ1hTk0FDtohEggIyCAHip9HJ6Zl/plsKxSGfUg==",
+  "dgSpecHash": "jR6D1jP5GJhnA5KX9WwYMJEz7MdRuW+Byd8XRKNywOBGoKKkRRYDSeR4YUAs3whFA15l7wtnNwGSKicaqMel6w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\adolf\\source\\repos\\TeamsNotesApi\\TeamsNotesApi\\TeamsNotesApi.csproj",
+  "projectFilePath": "C:\\Users\\adolf\\source\\repos\\Api-TeamsNotes\\TeamsNotesApi\\TeamsNotesApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adolf\\.nuget\\packages\\corepush\\3.1.0\\corepush.3.1.0.nupkg.sha512",
     "C:\\Users\\adolf\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.5\\microsoft.aspnetcore.authentication.jwtbearer.6.0.5.nupkg.sha512",
