@@ -9,60 +9,48 @@ using TeamsNotesApi.Tools.Interface;
 namespace TeamsNotesApi.Services.Security
 {
     public class LoginService : ILoginService
-    {
-        
-        private SqlConnection? sqlConnection;
-        private SqlDataReader? reader;
-        private SqlCommand? sqlCommnad;
-        private string? pstrquery = "";
+    {        
         private Reply? oR;
-
         private IJwtAuth _jwtAuth;
         private IEncrypt _encrypt;
         public LoginService(IJwtAuth jwtAuth, IEncrypt encrypt)
         {
             oR = new Reply();
-            sqlConnection = CVM_Connection.Connect();
-
-            _jwtAuth = jwtAuth;            
+            _jwtAuth = jwtAuth;
             _encrypt = encrypt;
         }
 
         public Reply? ValidateUser(User user)
         {
-            pstrquery = "Select ID_USUARIO,CD_USUARIO,DS_PASSWORD from vs_usuarios_seg1 WHERE CD_USUARIO = '" + user.user + "' and DS_PASSWORD = '" + _encrypt.encrypted(user.password) + "';";
 
-            try
+            using (var db = new CVM_GPA_SEG_01Context())
             {
-                sqlCommnad = new SqlCommand(pstrquery, sqlConnection);
-
-                reader = sqlCommnad.ExecuteReader();
-
-                if (reader.HasRows)
+                try
                 {
-                    while (reader.Read())
+                    user = (from d in db.Usuarios
+                            where d.CdUsuario == user.user && d.DsPassword == _encrypt.encrypted(user.password)
+                            select new User
+                            {
+                                id = d.IdUsuario,
+                                user = d.DsUsuario
+                            }).First();
+
+                    if (user.id > 0)
                     {
-                        user.id = reader.GetInt32(0);
+                        oR.result = 1;
+                        oR.data = _jwtAuth.GetNewToken(user);
+                        oR.message = "OK";
                     }
-
-                    oR.result = 1;
-                    oR.data = _jwtAuth.GetNewToken(user);
-                    oR.message = "OK";
+                    return oR;
                 }
-                else
+                catch (Exception ex)
                 {
-                    oR.message = "Usuario no encontrado";
+                    oR.message = ex.Message;
+                    return oR;
                 }
-            }
-            catch (Exception ex)
-            {
-                oR.message = ex.ToString();
-                return oR;
-            }
+            };
 
-            return oR;
         }
-
 
     }
 }

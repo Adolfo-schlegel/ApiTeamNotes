@@ -25,7 +25,7 @@ namespace TeamsNotesApi.Services.Notifications
         public Task StartAsync(CancellationToken cancellationToken)
         {            
             //cuando empieza la tarea
-            _timer = new Timer(TaskExpo, null, TimeSpan.Zero, TimeSpan.FromSeconds(5));
+            _timer = new Timer(TaskExpo, null, TimeSpan.Zero, TimeSpan.FromSeconds(0.1));
 
             return Task.CompletedTask;
         }

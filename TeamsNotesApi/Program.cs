@@ -1,3 +1,4 @@
+global using Microsoft.EntityFrameworkCore;
 using TeamsNotesApi.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
@@ -9,25 +10,29 @@ using TeamsNotesApi.Services.Security;
 using TeamsNotesApi.Services.Notes;
 using TeamsNotesApi.Tools.EncryptPass;
 using TeamsNotesApi.Services.Notifications;
-using CorePush.Google;
-using CorePush.Apple;
-using TeamsNotesApi.Models.Notification.Firebase;
+using TeamsNotesApi.Services.Connections;
 
 var builder = WebApplication.CreateBuilder(args);
 
 //ALL COMMON SERVICES>>>>
-
-//<----------------tools--------------------->
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//<-----DatabaseContext EntityFramework------>
+
+builder.Services.AddDbContext<CVM_GPA_SEG_01Context>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionStrings"));
+});
+
+//<----------------tools--------------------->
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<IMyNotesService, MyNotesService>();
 
 //<----------------Security------------------>
 builder.Services.AddScoped<IEncrypt, Encrypt>();
 builder.Services.AddScoped<IJwtAuth, JwtAuth>();
-//<같같같같같같같같같같같같같같같같같같같같같�>
 
 //<--------------Notification---------------->
 builder.Services.AddScoped<IStatusUserNotificationService, StatusUserNotificationService>();

@@ -21,7 +21,7 @@ namespace TeamsNotesApi.Controllers
         [HttpGet]
         [Route("MyNotes")]
         [Authorize]
-        public Reply NotasConsulta()
+        public Reply NotasConsulta([FromQuery] int page)
         {
             try
             {
@@ -31,12 +31,12 @@ namespace TeamsNotesApi.Controllers
                 {
                     int id_user = int.Parse(identity.Claims.First().Value);
 
-                    oR.data = _myNotesService.GetNotes(id_user);
+                    oR.data = _myNotesService.GetNotes(id_user, page);
 
                     if (oR.data != null)
                     {
                         oR.result = 1;
-                        oR.message = "OK";
+                        oR.message = "OK";                        
                         return oR;
                     }
                 }
@@ -45,14 +45,13 @@ namespace TeamsNotesApi.Controllers
             {
                 return oR;
             }
-
             return null;
         }
 
         [HttpPost]
         [Route("MyNotesFilter")]
         [Authorize]
-        public Reply NotasConsultaFiltrada([FromBody] ConsuNotas model)
+        public Reply NotasConsultaFiltrada([FromBody] ConsuNotas model, [FromQuery] int page)
         {
             try
             {
@@ -62,7 +61,7 @@ namespace TeamsNotesApi.Controllers
                 {
                     int id_user = int.Parse(identity.Claims.First().Value);
 
-                    oR.data = _myNotesService.GetFilterNotes(model, id_user);
+                    oR.data = _myNotesService.GetFilterNotes(model, id_user, page);
 
                     if (oR.data != null)
                     {
@@ -76,7 +75,6 @@ namespace TeamsNotesApi.Controllers
             {
                 return oR;
             }
-
             return null;
         }
 
@@ -93,13 +91,16 @@ namespace TeamsNotesApi.Controllers
                 {
                     oR.result = 1;
                     oR.message = "OK";
+
+                    return oR;
                 }
             }
             catch (Exception ex)
             {
                 oR.message = ex.ToString();
+                return oR;
             }
-            return oR;
+            return null;
         }
         [HttpPost]
         [Route("GetInfoNotes")]
@@ -113,13 +114,16 @@ namespace TeamsNotesApi.Controllers
                 {
                     oR.result = 1;
                     oR.message = "OK";
+
+                    return oR;
                 }
             }
             catch(Exception ex)
             {
-               oR.message = ex.Message.ToString();
+                oR.message = ex.Message.ToString();
+                return oR;                  
             }
-            return oR;
+            return null;
         }
 
         //[HttpGet]

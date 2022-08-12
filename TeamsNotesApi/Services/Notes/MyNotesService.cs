@@ -74,10 +74,10 @@ namespace TeamsNotesApi.Services.Notes
             }
         }
 
-        public object GetNotes(int id_user)
+        public object GetNotes(int id_user, int page = 0)
         {
            // query = "select r1.dt_alta, r1.dh_alta, r1.ds_nota, r1.ds_detalle, r1.ds_lectura_estado, r1.id_Reg_destino, qt_anexo = (SELECT COUNT(*) FROM reg_anexos X WHERE x.id_reg_nota = r1.id_reg_nota) FROM vs_reg_destinos1 r1 WHERE  1 = 1 and id_usuario = 5 and cd_medio = 'M' and dt_alta != ''  ORDER BY r1.dt_alta DESC";
-            query = "select r1.dt_alta, r1.dh_alta, r1.ds_nota, r1.ds_detalle, r1.ds_lectura_estado, r1.id_Reg_destino, qt_anexo = (SELECT COUNT(*) FROM reg_anexos X WHERE x.id_reg_nota = r1.id_reg_nota) from vs_reg_destinos1 r1 where r1.cd_medio = 'M'  AND r1.id_usuario = '"+id_user+"' and dt_alta != ''  ORDER BY r1.dt_alta DESC ";            
+            query = "select r1.dt_alta, r1.dh_alta, r1.ds_nota, r1.ds_detalle, r1.ds_lectura_estado, r1.id_Reg_destino, qt_anexo = (SELECT COUNT(*) FROM reg_anexos X WHERE x.id_reg_nota = r1.id_reg_nota) from vs_reg_destinos1 r1 where r1.cd_medio = 'M'  AND r1.id_usuario = '"+id_user+ "' and dt_alta != '' ORDER BY r1.dt_alta DESC OFFSET '"+page+"' ROWS FETCH NEXT 10 ROWS ONLY ";            
 
             RegistroNotas? registro;
             List<RegistroNotas> lst;
@@ -117,9 +117,9 @@ namespace TeamsNotesApi.Services.Notes
             }                
         }
 
-        public object GetFilterNotes(ConsuNotas model, int id_user)
+        public object GetFilterNotes(ConsuNotas model, int id_user, int page = 0)
         {
-            query = "select r1.dt_alta, r1.dh_alta, r1.ds_nota, r1.ds_detalle, r1.ds_lectura_estado, r1.id_Reg_destino, qt_anexo = (SELECT COUNT(*) FROM reg_anexos X WHERE x.id_reg_nota = r1.id_reg_nota) from vs_reg_destinos1 r1 where r1.cd_medio = 'M'  AND r1.id_usuario = '" + id_user.ToString() + "'and r1.id_lectura_estado = '"+model.estado+ "' and dt_alta != ''  ORDER BY r1.dt_alta DESC";
+            query = "select r1.dt_alta, r1.dh_alta, r1.ds_nota, r1.ds_detalle, r1.ds_lectura_estado, r1.id_Reg_destino, qt_anexo = (SELECT COUNT(*) FROM reg_anexos X WHERE x.id_reg_nota = r1.id_reg_nota) from vs_reg_destinos1 r1 where r1.cd_medio = 'M'  AND r1.id_usuario = '" + id_user.ToString() + "'and r1.id_lectura_estado = '"+model.estado+ "' and dt_alta != ''  ORDER BY r1.dt_alta DESC  OFFSET '"+page+"' ROWS FETCH NEXT 10 ROWS ONLY";
 
             RegistroNotas? registro;
             List<RegistroNotas> lst;
@@ -277,10 +277,10 @@ namespace TeamsNotesApi.Services.Notes
 
         public int UpdateStatusNote(int IdRegDestino)
         {
-            query = "UPDATE  vs_reg_destinos1  SET id_lectura_estado = 3  WHERE id_reg_destino = '" + IdRegDestino+"'";
+            query = "UPDATE  vs_reg_destinos1  SET id_lectura_estado = 3  WHERE id_reg_destino = '" + IdRegDestino + "'";
             cmd = new SqlCommand(query, conn);
 
-            if(cmd.ExecuteNonQuery() != 0)
+            if (cmd.ExecuteNonQuery() != 0)
             {
                 return 1;
             }
