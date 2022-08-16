@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "8lhZuhYvoyUM4/Rf5j3eU6AUWgZAhX3GEp1VAVcIQSOd48jVyPiZFsrs4V1a8o55vROqasqz6QuCAbbhDJ27tw==",
+  "dgSpecHash": "Vv+uH45U9Un7A1WrBpNtIYwAnl7vil4KHR0EM+angV5X2gKFj1NxTkmAJx9PG0aDqY/b8QS6aOt3Xhsvrvoxkw==",
   "success": true,
   "projectFilePath": "C:\\Users\\adolf\\source\\repos\\Api-TeamsNotes\\TeamsNotesApi\\TeamsNotesApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adolf\\.nuget\\packages\\corepush\\3.1.0\\corepush.3.1.0.nupkg.sha512",
+    "C:\\Users\\adolf\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\adolf\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\adolf\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.5\\microsoft.aspnetcore.authentication.jwtbearer.6.0.5.nupkg.sha512",
     "C:\\Users\\adolf\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -2,7 +2,7 @@
 {
     public class Destinatario
     {
-        public int id { get; set; }
-        public string? destinatario { get; set; }
+        public int id_destinatario { get; set; }
+        public string? ds_destinatario { get; set; }
     }
 }

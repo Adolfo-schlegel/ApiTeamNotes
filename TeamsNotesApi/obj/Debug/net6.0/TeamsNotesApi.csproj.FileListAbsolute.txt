@@ -114,3 +114,4 @@ C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Debug\net6.0\refint
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Debug\net6.0\TeamsNotesApi.pdb
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Debug\net6.0\TeamsNotesApi.genruntimeconfig.cache
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Debug\net6.0\ref\TeamsNotesApi.dll
+C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Dapper.dll

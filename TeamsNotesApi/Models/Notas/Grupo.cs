@@ -2,8 +2,8 @@
 {
     public class Grupo
     {
-        public int id { get; set; }
-        public string? grupo { get; set; }
+        public int id_nota_grupo { get; set; }
+        public string? ds_nota_grupo { get; set; }
 
     }
 }

@@ -5,6 +5,7 @@ C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubT
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\TeamsNotesApi.runtimeconfig.json
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\TeamsNotesApi.pdb
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\CorePush.dll
+C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Dapper.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Microsoft.Data.SqlClient.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
