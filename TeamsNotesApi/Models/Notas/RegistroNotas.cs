@@ -9,5 +9,6 @@
         public string? ds_lectura_estado { get; set; }
         public int id_Reg_Destino { get; set; }
         public int ct_anexos { get; set; }
+        public string? ds_destinatario { get; set; }
     }
 }

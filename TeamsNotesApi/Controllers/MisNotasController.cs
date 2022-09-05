@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Security.Claims;
 using TeamsNotesApi.Models;
 using TeamsNotesApi.Models.Notas;
@@ -20,8 +22,8 @@ namespace TeamsNotesApi.Controllers
 
         [HttpGet]
         [Route("MyNotes")]
-        [Authorize]
-        public Reply NotasConsulta([FromQuery] int page)
+        [Authorize]        
+        public Reply NotasConsulta([FromQuery] int page, [FromQuery] int status)
         {
             try
             {
@@ -31,7 +33,7 @@ namespace TeamsNotesApi.Controllers
                 {
                     int id_user = int.Parse(identity.Claims.First().Value);
 
-                    oR.data = _myNotesService.GetNotes(id_user, page);
+                    oR.data = _myNotesService.GetNotes(id_user,status, page);
 
                     if (oR.data != null)
                     {
@@ -165,6 +167,7 @@ namespace TeamsNotesApi.Controllers
 
             return File(FileBytes, "application/pdf", Path.GetFileName(pathfile.ToString()));
         }
+
         [HttpPut]
         [Route("UpdateStatusNote")]
         [Authorize]

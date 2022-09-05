@@ -31,9 +31,7 @@ namespace TeamsNotesApi.Controllers
                 oR.message = "Error en el servidor";
                 return oR;
             }
-
-            
-
+           
             return oR;
         }
     }

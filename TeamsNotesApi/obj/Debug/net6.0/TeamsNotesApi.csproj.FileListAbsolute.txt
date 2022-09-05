@@ -42,14 +42,14 @@ C:\Users\adolf\source\repos\TeamsNotesApi\TeamsNotesApi\obj\Debug\net6.0\refint\
 C:\Users\adolf\source\repos\TeamsNotesApi\TeamsNotesApi\obj\Debug\net6.0\TeamsNotesApi.pdb
 C:\Users\adolf\source\repos\TeamsNotesApi\TeamsNotesApi\obj\Debug\net6.0\TeamsNotesApi.genruntimeconfig.cache
 C:\Users\adolf\source\repos\TeamsNotesApi\TeamsNotesApi\obj\Debug\net6.0\ref\TeamsNotesApi.dll
+C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\TeamsNotesApi.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\appsettings.json
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\TeamsNotesApi.exe
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\TeamsNotesApi.deps.json
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\TeamsNotesApi.runtimeconfig.json
-C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\TeamsNotesApi.dll
-C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\TeamsNotesApi.pdb
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\CorePush.dll
+C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Dapper.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Humanizer.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
@@ -59,6 +59,7 @@ C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Micros
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
@@ -70,6 +71,9 @@ C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Micros
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Scrutor.dll
+C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -113,5 +117,5 @@ C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Debug\net6.0\TeamsN
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Debug\net6.0\refint\TeamsNotesApi.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Debug\net6.0\TeamsNotesApi.pdb
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Debug\net6.0\TeamsNotesApi.genruntimeconfig.cache
+C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\TeamsNotesApi.pdb
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Debug\net6.0\ref\TeamsNotesApi.dll
-C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\bin\Debug\net6.0\Dapper.dll

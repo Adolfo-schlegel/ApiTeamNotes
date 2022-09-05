@@ -11,13 +11,24 @@ using TeamsNotesApi.Services.Notes;
 using TeamsNotesApi.Tools.EncryptPass;
 using TeamsNotesApi.Services.Notifications;
 using TeamsNotesApi.Services.Connections;
+using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
 //ALL COMMON SERVICES>>>>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("oauth2", new ApiKeyScheme
+    {
+        Description = "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
+        In = "header",
+        Name = "Authorization",
+        Type = "apiKey"
+    });
+    options.OperationFilter<SecurityRequirementsOperationFilter>();
+});
 
 //<-----DatabaseContext EntityFramework------>
 
@@ -82,12 +93,8 @@ builder.Services.AddAuthentication(option => {
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SecureSwagger v1"));
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

@@ -13,6 +13,7 @@ C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubT
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Microsoft.Extensions.DependencyModel.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Microsoft.Identity.Client.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.JsonWebTokens.dll
@@ -24,6 +25,9 @@ C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubT
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\BouncyCastle.Crypto.dll
+C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Scrutor.dll
+C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Filters.Abstractions.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\adolf\source\repos\Api-TeamsNotes\TeamsNotesApi\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

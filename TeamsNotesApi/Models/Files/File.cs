@@ -2,8 +2,8 @@
 {
     public class File
     {
-        public string? pathFile { get; set; }
-        public string? nameFile { get; set; } 
-        public string? type { get; set; }
+        public string? DS_PATH { get; set; }
+        public string? DS_ARCHIVO { get; set; } 
+        public string? CD_archivo_tipo { get; set; }
     }
 }
