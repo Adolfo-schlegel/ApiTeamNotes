@@ -8,7 +8,7 @@
         
         //public string? medio { get; set; }        
         //public bool? myNotes { get; set; }
-        // public int? estado { get; set; }
+        public int? estado { get; set; }
         
     }
 

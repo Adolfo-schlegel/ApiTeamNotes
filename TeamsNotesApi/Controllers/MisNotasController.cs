@@ -58,7 +58,7 @@ namespace TeamsNotesApi.Controllers
             try
             {
                 var identity = HttpContext.User.Identity as ClaimsIdentity;
-
+                
                 if (identity != null)
                 {
                     int id_user = int.Parse(identity.Claims.First().Value);

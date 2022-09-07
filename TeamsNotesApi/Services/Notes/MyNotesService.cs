@@ -46,9 +46,9 @@ namespace TeamsNotesApi.Services.Notes
         {
             query = "select r1.dt_alta,r1.ds_destinatario, r1.dh_alta, r1.ds_nota, r1.ds_detalle, r1.ds_lectura_estado, r1.id_Reg_destino, qt_anexo = (SELECT COUNT(*) FROM reg_anexos X WHERE x.id_reg_nota = r1.id_reg_nota) from vs_reg_destinos1 r1 where r1.cd_medio = 'M'  AND r1.id_usuario = '" + id_user+ "' [ESTADO] and dt_alta != '' ORDER BY r1.dt_alta DESC OFFSET " + page+" ROWS FETCH NEXT 10 ROWS ONLY ";                      
             
-            if(status > 0)
+            if(status == 3)
                 query = query.Replace("[ESTADO]", "and r1.id_lectura_estado = '" + status + "'");
-            else
+            else if (status == 0)
                 query = query.Replace("[ESTADO]", " ");
             
             
@@ -72,7 +72,13 @@ namespace TeamsNotesApi.Services.Notes
 
         public object GetFilterNotes(ConsuNotas model, int id_user, int page = 0)
         {
-            query = "select r1.dt_alta,r1.ds_destinatario, r1.dh_alta, r1.ds_nota, r1.ds_detalle, r1.ds_lectura_estado, r1.id_Reg_destino, qt_anexo = (SELECT COUNT(*) FROM reg_anexos X WHERE x.id_reg_nota = r1.id_reg_nota) from vs_reg_destinos1 r1 where r1.cd_medio = 'M'  AND r1.id_usuario = '" + id_user.ToString() + "' and r1.id_lectura_estado = '"+model.estado+ "' and dt_alta != ''  ORDER BY r1.dt_alta DESC  OFFSET "+page+" ROWS FETCH NEXT 10 ROWS ONLY";
+            query = "select r1.dt_alta,r1.ds_destinatario, r1.dh_alta, r1.ds_nota, r1.ds_detalle, r1.ds_lectura_estado, r1.id_Reg_destino, qt_anexo = (SELECT COUNT(*) FROM reg_anexos X WHERE x.id_reg_nota = r1.id_reg_nota) from vs_reg_destinos1 r1 where r1.cd_medio = 'M'  AND r1.id_usuario = '" + id_user.ToString() + "' [ESTADO] and dt_alta != ''  ORDER BY r1.dt_alta DESC  OFFSET "+page+" ROWS FETCH NEXT 10 ROWS ONLY";
+
+            if (model.estado == 3)
+                query = query.Replace("[ESTADO]", "and r1.id_lectura_estado = '"+model.estado+"'");
+            else if(model.estado == 0)
+                query = query.Replace("[ESTADO]", " ");
+                       
             List<RegistroNotas> lst;
 
             try
